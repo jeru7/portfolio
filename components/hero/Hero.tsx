@@ -23,9 +23,9 @@ const socMeds: SocialMedia[] = [
 
 const Hero = () => {
   return (
-    <section className="h-full">
+    <section className="h-screen">
       <article className="h-full flex flex-col justify-center gap-2">
-        <p className="font-bold text-4xl">
+        <p className="">
           Hi, I’m Emmanuel.
           <br />
           An aspiring <span className="text-accent">
