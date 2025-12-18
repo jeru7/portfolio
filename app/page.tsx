@@ -1,6 +1,7 @@
 import Hero from "@/components/hero/Hero";
 import Projects from "@/components/projects/Projects";
 import Tagline from "@/components/tagline/Tagline";
+import Technologies from "@/components/technologies/Technologies";
 
 const HomePage = () => {
   return (
@@ -8,6 +9,7 @@ const HomePage = () => {
       <Hero />
       <Tagline />
       <Projects />
+      <Technologies />
     </div>
   );
 };
