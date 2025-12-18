@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Emmanuel Ungab - Portfolio",
+  title: "jeru7 - byte by byte",
   description: "Developer portfolio of Emmanuel Ungab.",
 };
 
@@ -21,11 +21,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body
+        className={`${inter.variable} antialiased min-h-screen flex flex-col`}
+      >
         <header>
           <Navbar />
         </header>
-        <main>{children}</main>
+        <main className="flex-1 flex">{children}</main>
       </body>
     </html>
   );
