@@ -16,7 +16,7 @@ const technologies = [
 const Technologies = () => {
   return (
     <section className="h-screen">
-      <article className="h-full flex flex-col w-full">
+      <article className="h-full flex flex-col w-full gap-4">
         <header className="">My development tools</header>
         <ul className="flex gap-2 flex-wrap">
           {technologies.map((technology, index) => (

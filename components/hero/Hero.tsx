@@ -1,25 +1,6 @@
 "use client";
 
-import { SocialMedia } from "@/types/social.types";
-import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
-
-const socMeds: SocialMedia[] = [
-  {
-    title: "Github",
-    icon: <FaGithub className="h-6 w-6" />,
-    link: "https://github.com/jeru7",
-  },
-  {
-    title: "Linkedin",
-    icon: <FaLinkedin className="h-6 w-6" />,
-    link: "https://www.linkedin.com/in/jeru7/",
-  },
-  {
-    title: "Facebook",
-    icon: <FaFacebook className="h-6 w-6" />,
-    link: "https://www.facebook.com/jeruuu.7/",
-  },
-];
+import { socMeds } from "@/lib/socials";
 
 const Hero = () => {
   return (
@@ -46,7 +27,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="cursor-pointer hover:opacity-80 transition-opacity"
               >
-                {social.icon}
+                {<social.icon className="w-6 h-6" />}
               </a>
             </div>
           ))}
