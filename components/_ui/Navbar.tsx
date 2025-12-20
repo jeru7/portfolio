@@ -4,7 +4,7 @@ import { PERSONAL_INFO } from "@/constants/personal";
 
 const Navbar = () => {
   return (
-    <nav className="w-full p-2">
+    <nav className="w-full p-2 fixed top-0 bg-background z-10">
       <h1 className="text-accent font-bold text-base">{PERSONAL_INFO.NAME}</h1>
     </nav>
   );

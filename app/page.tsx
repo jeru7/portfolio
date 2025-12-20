@@ -1,3 +1,10 @@
+"use client";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel } from "swiper/modules";
+
+import "swiper/css";
+
 import Hero from "@/components/hero/Hero";
 import LetsConnect from "@/components/lets-connect/LetsConnect";
 import Projects from "@/components/projects/Projects";
@@ -6,13 +13,34 @@ import Technologies from "@/components/technologies/Technologies";
 
 const HomePage = () => {
   return (
-    <div className="flex-1 p-2 font-bold text-4xl w-screen">
-      <Hero />
-      <Tagline />
-      <Projects />
-      <Technologies />
-      <LetsConnect />
-    </div>
+    <Swiper
+      modules={[Mousewheel]}
+      direction="vertical"
+      slidesPerView={1}
+      mousewheel
+      pagination={{ clickable: true }}
+      className="h-screen w-screen overflow-hidden font-bold text-4xl"
+    >
+      <SwiperSlide>
+        <Hero />
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <Tagline />
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <Projects />
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <Technologies />
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <LetsConnect />
+      </SwiperSlide>
+    </Swiper>
   );
 };
 

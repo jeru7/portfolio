@@ -2,39 +2,43 @@ import { socMeds } from "@/lib/socials";
 
 const LetsConnect = () => {
   return (
-    <section className="h-screen flex flex-col justify-center gap-6">
+    <section className="h-full p-2 flex flex-col pb-8">
       {/* message form */}
-      <form className="flex flex-col gap-4">
-        {/* title */}
-        <p>Feel free to message me</p>
-        <section className="flex flex-col gap-2">
-          {/* name */}
-          <input
-            type="text"
-            placeholder="Name"
-            className="text-sm border rounded-md p-2 focus:outline-none focus:ring-0"
-          />
-          {/* email */}
-          <input
-            type="email"
-            placeholder="Email"
-            className="text-sm border rounded-md p-2 focus:outline-none focus:ring-0"
-          />
-          {/* message */}
-          <textarea
-            placeholder="Message"
-            className="w-full text-sm border rounded-md p-2 focus:outline-none focus:ring-0"
-            rows={10}
-          />
-          {/* send message button */}
-          <button
-            type="submit"
-            className="bg-foreground w-fit h-fit p-2 rounded-md self-end"
-          >
-            <p className="text-background text-xs font-normal">Send message</p>
-          </button>
-        </section>
-      </form>
+      <section className="flex-1 flex items-center">
+        <form className="flex flex-col gap-4">
+          {/* title */}
+          <p>Feel free to message me</p>
+          <section className="flex flex-col gap-2">
+            {/* name */}
+            <input
+              type="text"
+              placeholder="Name"
+              className="text-sm border rounded-md p-2 focus:outline-none focus:ring-0"
+            />
+            {/* email */}
+            <input
+              type="email"
+              placeholder="Email"
+              className="text-sm border rounded-md p-2 focus:outline-none focus:ring-0"
+            />
+            {/* message */}
+            <textarea
+              placeholder="Message"
+              className="w-full text-sm border rounded-md p-2 focus:outline-none focus:ring-0"
+              rows={10}
+            />
+            {/* send message button */}
+            <button
+              type="submit"
+              className="bg-foreground w-fit h-fit p-2 rounded-md self-end"
+            >
+              <p className="text-background text-xs font-normal">
+                Send message
+              </p>
+            </button>
+          </section>
+        </form>
+      </section>
 
       {/* social media and cv */}
       <section className="flex flex-col gap-2 items-center">

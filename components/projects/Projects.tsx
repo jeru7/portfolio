@@ -26,15 +26,13 @@ const projects: Project[] = [
 
 const Projects = () => {
   return (
-    <section className="h-screen">
-      <article className="flex flex-col h-full gap-4">
-        <p>Here's some of my projects</p>
-        <ul className="flex flex-col gap-2">
-          {projects.map((project) => (
-            <ProjectItem project={project} key={project.title} />
-          ))}
-        </ul>
-      </article>
+    <section className="h-full p-2 flex flex-col gap-4 justify-center">
+      <p>Here's some of my projects</p>
+      <ul className="flex flex-col gap-2">
+        {projects.map((project) => (
+          <ProjectItem project={project} key={project.title} />
+        ))}
+      </ul>
     </section>
   );
 };
