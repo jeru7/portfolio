@@ -9,7 +9,7 @@ const Hero = () => {
       <p className="">
         Hi, I’m Emmanuel.
         <br />
-        An aspiring
+        An aspiring{" "}
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,7 +17,7 @@ const Hero = () => {
           className="text-accent inline-block"
         >
           full stack developer
-        </motion.span>
+        </motion.span>{" "}
         from Philippines.
       </p>
       <div className="flex gap-2">

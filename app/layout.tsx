@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/_ui/Navbar";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Navbar />
         </header>
         <main className="flex-1 flex">{children}</main>
+        <Toaster position="top-center" theme="dark" />
       </body>
     </html>
   );
