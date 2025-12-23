@@ -1,3 +1,4 @@
+// local imports
 import { Project } from "@/types/project.types";
 import ProjectItem from "./ProjectItem";
 

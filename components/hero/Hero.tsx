@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import { socMeds } from "@/lib/socials";
 
 const Hero = () => {
@@ -8,9 +9,15 @@ const Hero = () => {
       <p className="">
         Hi, I’m Emmanuel.
         <br />
-        An aspiring <span className="text-accent">
+        An aspiring
+        <motion.span
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-accent inline-block"
+        >
           full stack developer
-        </span>{" "}
+        </motion.span>
         from Philippines.
       </p>
       <div className="flex gap-2">

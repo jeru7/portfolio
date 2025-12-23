@@ -1,3 +1,6 @@
+// motion - for animation
+import { motion } from "motion/react";
+// local imports
 import { socMeds } from "@/lib/socials";
 
 const LetsConnect = () => {
@@ -30,7 +33,7 @@ const LetsConnect = () => {
             {/* send message button */}
             <button
               type="submit"
-              className="bg-foreground w-fit h-fit p-2 rounded-md self-end"
+              className="bg-foreground w-fit h-fit p-2 rounded-md self-end opacity-80 hover:opacity-100 hover:cursor-pointer transition-colors duration-200"
             >
               <p className="text-background text-xs font-normal">
                 Send message
@@ -41,7 +44,13 @@ const LetsConnect = () => {
       </section>
 
       {/* social media and cv */}
-      <section className="flex flex-col gap-2 items-center">
+      <motion.section
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        className="flex flex-col gap-2 items-center"
+      >
         {/* social media buttons */}
         <div className="flex gap-2">
           {socMeds.map((social, index) => (
@@ -62,10 +71,10 @@ const LetsConnect = () => {
           ))}
         </div>
         {/* cv button */}
-        <button className="bg-foreground rounded-md p-2">
+        <button className="bg-foreground rounded-md p-2 opacity-80 hover:opacity-100 hover:cursor-pointer transition-colors duration-200">
           <p className="text-xs font-normal text-background">Download CV</p>
         </button>
-      </section>
+      </motion.section>
     </section>
   );
 };

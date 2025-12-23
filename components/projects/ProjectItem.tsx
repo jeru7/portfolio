@@ -1,3 +1,4 @@
+// local imports
 import { Project } from "@/types/project.types";
 import { IoPeople, IoPerson } from "react-icons/io5";
 
@@ -7,7 +8,7 @@ interface ProjectItemProps {
 
 const ProjectItem = ({ project }: ProjectItemProps) => {
   return (
-    <li className="border-l border-l-accent p-2 flex">
+    <li className="border-l border-l-accent p-2 flex opacity-80 hover:opacity-100 duration-200 hover:cursor-pointer">
       {/* left section */}
       <section className="flex flex-col flex-1">
         <header>
