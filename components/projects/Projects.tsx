@@ -17,18 +17,12 @@ const projects: Project[] = [
     year: "2024",
     isSolo: false,
   },
-  {
-    title: "TaiyoList",
-    description: "A grocery list manager mobile application.",
-    year: "2024",
-    isSolo: false,
-  },
 ];
 
 const Projects = () => {
   return (
     <section className="h-full p-2 flex flex-col gap-4 justify-center">
-      <p>Here's some of my projects</p>
+      <h2>Projects</h2>
       <ul className="flex flex-col gap-2">
         {projects.map((project) => (
           <ProjectItem project={project} key={project.title} />
