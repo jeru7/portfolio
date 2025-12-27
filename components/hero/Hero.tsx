@@ -6,7 +6,7 @@ import { socMeds } from "@/lib/socials";
 const Hero = () => {
   return (
     <section className="h-full flex flex-col justify-center gap-2 p-2">
-      <p className="">
+      <h1 className="">
         Hi, I’m Emmanuel.
         <br />
         An aspiring{" "}
@@ -19,7 +19,7 @@ const Hero = () => {
           full stack developer
         </motion.span>{" "}
         from Philippines.
-      </p>
+      </h1>
       <div className="flex gap-2">
         {socMeds.map((social, index) => (
           <div

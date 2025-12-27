@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 import { socMeds } from "@/lib/socials";
 import { toast } from "sonner";
 
-const LetsConnect = () => {
+const Contact = () => {
   const [formData, setFormData] = useState<MessageData>(initialFormData);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -157,7 +157,7 @@ const LetsConnect = () => {
             <button
               type="submit"
               disabled={isLoading || isSuccess}
-              className="bg-foreground w-fit h-fit p-2 rounded-md self-end opacity-80 hover:opacity-100 hover:cursor-pointer transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-80"
+              className="border border-foreground w-fit h-fit p-2 rounded-md self-end opacity-80 hover:opacity-100 hover:cursor-pointer transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-80"
             >
               <p className="text-background text-xs font-normal">
                 {isLoading ? "Sending message" : "Send message"}
@@ -195,7 +195,7 @@ const LetsConnect = () => {
           ))}
         </div>
         {/* cv button */}
-        <button className="bg-foreground rounded-md p-2 opacity-80 hover:opacity-100 hover:cursor-pointer transition-colors duration-200">
+        <button className="border border-foreground rounded-md p-2 opacity-80 hover:opacity-100 hover:cursor-pointer transition-colors duration-200">
           <p className="text-xs font-normal text-background">Download CV</p>
         </button>
       </motion.section>
@@ -220,4 +220,4 @@ interface MessageData {
   message: MessageField;
 }
 
-export default LetsConnect;
+export default Contact;
