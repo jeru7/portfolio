@@ -1,31 +1,27 @@
-// local imports
-import { Project } from "@/types/project.types";
-import ProjectItem from "./ProjectItem";
+"use client";
 
-const projects: Project[] = [
-  {
-    title: "MathPath",
-    description:
-      "A mobile game and a website to track the student’s game progress.",
-    year: "2024-2025",
-    isSolo: false,
-  },
-  {
-    title: "ChinguTASK",
-    description:
-      "A simple task management website created by collaborating with other developers from chingu.",
-    year: "2024",
-    isSolo: false,
-  },
-];
+// local imports
+import ProjectItem from "./ProjectItem";
+import { projects } from "@/lib/projects";
+import { useRouter } from "next/navigation";
 
 const Projects = () => {
+  const router = useRouter();
+
+  const openProject = (slug: string) => {
+    router.push(`/projects/${slug}`);
+  };
+
   return (
-    <section className="h-full p-2 flex flex-col gap-4 justify-center">
-      <h2>Projects</h2>
+    <section className="h-full w-full p-2 flex flex-col gap-4 justify-center">
+      <h2 className="text-accent">Projects</h2>
       <ul className="flex flex-col gap-2">
         {projects.map((project) => (
-          <ProjectItem project={project} key={project.title} />
+          <ProjectItem
+            project={project}
+            key={project.title}
+            onClick={() => openProject(project.slug)}
+          />
         ))}
       </ul>
     </section>

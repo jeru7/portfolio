@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 // local imports
 import { socMeds } from "@/lib/socials";
 import { toast } from "sonner";
+import Button from "../_ui/Button";
 
 const Contact = () => {
   const [formData, setFormData] = useState<MessageData>(initialFormData);
@@ -104,12 +105,12 @@ const Contact = () => {
   }, [isSuccess]);
 
   return (
-    <section className="h-full p-2 flex flex-col pb-8">
+    <section className="h-full w-full p-2 flex flex-col pb-8">
       {/* message form */}
-      <section className="flex-1 flex items-center">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <section className="flex-1 flex items-center w-full">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
           {/* title */}
-          <p>Feel free to message me</p>
+          <p className="text-accent">Feel free to message me</p>
           <section className="flex flex-col gap-2">
             {/* name */}
             <input
@@ -145,24 +146,21 @@ const Contact = () => {
               placeholder="Message"
               value={formData.message.value}
               onChange={handleChange}
-              className="w-full text-sm border rounded-md p-2 focus:outline-none focus:ring-0"
-              rows={10}
+              className="w-full text-sm border rounded-md p-2 focus:outline-none focus:ring-0 resize-none h-48 md:h-96"
             />
             {formData.message.error && (
               <p className="text-red-500 text-sm font-normal">
                 {formData.message.error}
               </p>
             )}
+
             {/* send message button */}
-            <button
-              type="submit"
+            <Button
+              content={isLoading ? "Sending message" : "Send message"}
               disabled={isLoading || isSuccess}
-              className="border border-foreground w-fit h-fit p-2 rounded-md self-end opacity-80 hover:opacity-100 hover:cursor-pointer transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-80"
-            >
-              <p className="text-background text-xs font-normal">
-                {isLoading ? "Sending message" : "Send message"}
-              </p>
-            </button>
+              type="submit"
+              customClasses="w-fit h-fit self-end"
+            />
           </section>
         </form>
       </section>
@@ -187,7 +185,7 @@ const Contact = () => {
                 href={social.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer hover:opacity-80 transition-opacity"
+                className="cursor-pointer hover:text-accent transition-colors duration-200"
               >
                 {<social.icon className="w-6 h-6" />}
               </a>
@@ -195,9 +193,10 @@ const Contact = () => {
           ))}
         </div>
         {/* cv button */}
-        <button className="border border-foreground rounded-md p-2 opacity-80 hover:opacity-100 hover:cursor-pointer transition-colors duration-200">
-          <p className="text-xs font-normal text-background">Download CV</p>
-        </button>
+        <Button
+          content="Download CV"
+          onClick={() => console.log("Download CV")}
+        />
       </motion.section>
     </section>
   );

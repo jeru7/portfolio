@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/_ui/Navbar";
 import { Toaster } from "sonner";
+import SwiperProvider from "@/context/swiper/SwiperProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,13 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} antialiased min-h-screen flex flex-col`}
+        className={`${inter.variable} antialiased min-h-screen flex flex-col bg-gray-400`}
       >
-        <header>
-          <Navbar />
-        </header>
-        <main className="flex-1 flex">{children}</main>
-        <Toaster position="top-center" theme="dark" />
+        <SwiperProvider>
+          <header>
+            <Navbar />
+          </header>
+          <main className="flex-1 flex text-foreground">{children}</main>
+          <Toaster position="top-center" theme="dark" />
+        </SwiperProvider>
       </body>
     </html>
   );

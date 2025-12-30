@@ -1,20 +1,25 @@
 // local imports
 import { Project } from "@/types/project.types";
+// icons
 import { IoPeople, IoPerson } from "react-icons/io5";
 
 interface ProjectItemProps {
   project: Project;
+  onClick: () => void;
 }
 
-const ProjectItem = ({ project }: ProjectItemProps) => {
+const ProjectItem = ({ project, onClick }: ProjectItemProps) => {
   return (
-    <li className="border-l border-l-accent p-2 flex opacity-80 hover:opacity-100 duration-200 hover:cursor-pointer">
+    <li
+      className="border-l border-l-accent p-2 flex opacity-80 hover:opacity-100 duration-200 hover:cursor-pointer"
+      onClick={onClick}
+    >
       {/* left section */}
       <section className="flex flex-col flex-1">
         <header>
           <p className="text-lg">{project.title}</p>
         </header>
-        <p className="text-sm font-normal">{project.description}</p>
+        <p className="text-sm font-normal">{project.description.short}</p>
         <p className="text-xs font-normal italic">{project.year}</p>
       </section>
       {/* right section */}
