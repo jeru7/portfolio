@@ -10,6 +10,7 @@ import Projects from "@/components/projects/Projects";
 import Tagline from "@/components/tagline/Tagline";
 import { SECTIONS } from "@/constants/sections";
 import { useSwiperContext } from "@/context/swiper/SwiperContext";
+import { useEffect } from "react";
 
 const getHash = () => {
   if (typeof window === "undefined") return "home";
@@ -17,10 +18,21 @@ const getHash = () => {
 };
 
 const HomePage = () => {
-  const { setSwiper } = useSwiperContext();
+  const { setSwiper, swiper } = useSwiperContext();
   const hash = getHash();
 
-  const initialSlide = Math.max(SECTIONS.indexOf(hash), 0);
+  useEffect(() => {
+    if (!swiper) return;
+
+    const index = SECTIONS.indexOf(hash);
+
+    // .5 secs delay before sliding to the right page
+    const timer = setTimeout(() => {
+      swiper?.slideTo(index, 700);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [swiper, hash]);
 
   return (
     <Swiper
@@ -29,7 +41,6 @@ const HomePage = () => {
       direction="vertical"
       slidesPerView={1}
       mousewheel
-      initialSlide={initialSlide}
       onSwiper={(swiper) => setSwiper(swiper)}
       onSlideChange={(swiper) => {
         const section = SECTIONS[swiper.activeIndex];
