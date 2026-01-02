@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { IconType } from "react-icons";
 
 export interface Project {
@@ -12,7 +13,10 @@ export interface Project {
   features: string[];
   year: string;
   isSolo: boolean;
-  images: string[];
+  images: {
+    website: StaticImageData[];
+    mobile: StaticImageData[];
+  };
 }
 
 interface ProjectLink {
