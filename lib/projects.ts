@@ -1,6 +1,14 @@
 import { Project } from "@/types/project.types";
 import { FaGithub } from "react-icons/fa";
 
+// chingutask imports
+import chingutask_web_1 from "@/public/images/projects/chingutask/chingutask-web_1.png";
+import chingutask_web_2 from "@/public/images/projects/chingutask/chingutask-web_2.png";
+import chingutask_web_3 from "@/public/images/projects/chingutask/chingutask-web_3.png";
+import chingutask_mobile_1 from "@/public/images/projects/chingutask/chingutask-mobile_1.png";
+import chingutask_mobile_2 from "@/public/images/projects/chingutask/chingutask-mobile_2.png";
+import chingutask_mobile_3 from "@/public/images/projects/chingutask/chingutask-mobile_3.png";
+
 export const projects: Project[] = [
   // mathpath
   {
@@ -37,7 +45,10 @@ export const projects: Project[] = [
     ],
     year: "2024-2025",
     isSolo: false,
-    images: [""],
+    images: {
+      website: [chingutask_web_1, chingutask_web_2, chingutask_web_3],
+      mobile: [chingutask_mobile_1, chingutask_mobile_2, chingutask_mobile_3],
+    },
   },
   // chingutask
   {
@@ -63,6 +74,9 @@ export const projects: Project[] = [
     ],
     year: "2024",
     isSolo: false,
-    images: [""],
+    images: {
+      website: [chingutask_web_1, chingutask_web_2, chingutask_web_3],
+      mobile: [chingutask_mobile_1, chingutask_mobile_2, chingutask_mobile_3],
+    },
   },
 ];
