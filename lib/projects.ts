@@ -13,23 +13,26 @@ export const projects: Project[] = [
   // mathpath
   {
     title: "Math-Path 10",
-    link: [
-      {
-        icon: FaGithub,
-        name: "Game",
-        url: "https://github.com/jeru7/MathPath-Unity",
-      },
-      {
-        icon: FaGithub,
-        name: "Website",
-        url: "https://github.com/jeru7/MathPath-Web",
-      },
-      {
-        icon: FaGithub,
-        name: "Server",
-        url: "https://github.com/jeru7/MathPath-Server",
-      },
-    ],
+    link: {
+      repo: [
+        {
+          icon: FaGithub,
+          name: "Game",
+          url: "https://github.com/jeru7/MathPath-Unity",
+        },
+        {
+          icon: FaGithub,
+          name: "Website",
+          url: "https://github.com/jeru7/MathPath-Web",
+        },
+        {
+          icon: FaGithub,
+          name: "Server",
+          url: "https://github.com/jeru7/MathPath-Server",
+        },
+      ],
+      website: "https://mathpath.site",
+    },
     slug: "mathpath-10",
     technologies: ["ReactJS", "TypeScript", "NodeJS", "MongoDB", "Unity", "C#"],
     description: {
@@ -46,20 +49,30 @@ export const projects: Project[] = [
     year: "2024-2025",
     isSolo: false,
     images: {
-      website: [chingutask_web_1, chingutask_web_2, chingutask_web_3],
-      mobile: [chingutask_mobile_1, chingutask_mobile_2, chingutask_mobile_3],
+      website: {
+        largeScreen: [chingutask_web_1, chingutask_web_2, chingutask_web_3],
+        mobileScreen: [
+          chingutask_mobile_1,
+          chingutask_mobile_2,
+          chingutask_mobile_3,
+        ],
+      },
     },
+    isMultiPlatform: true,
   },
   // chingutask
   {
     title: "ChinguTASK",
-    link: [
-      {
-        icon: FaGithub,
-        name: "Website",
-        url: "https://github.com/chingu-voyages/v47-tier1-team-01",
-      },
-    ],
+    link: {
+      repo: [
+        {
+          icon: FaGithub,
+          name: "Website",
+          url: "https://github.com/chingu-voyages/v47-tier1-team-01",
+        },
+      ],
+      website: "https://v47-tier01-team01-daily-task-app.netlify.app/",
+    },
     slug: "chingutask",
     technologies: ["HTML", "CSS", "JavaScript"],
     description: {
@@ -75,8 +88,15 @@ export const projects: Project[] = [
     year: "2024",
     isSolo: false,
     images: {
-      website: [chingutask_web_1, chingutask_web_2, chingutask_web_3],
-      mobile: [chingutask_mobile_1, chingutask_mobile_2, chingutask_mobile_3],
+      website: {
+        largeScreen: [chingutask_web_1, chingutask_web_2, chingutask_web_3],
+        mobileScreen: [
+          chingutask_mobile_1,
+          chingutask_mobile_2,
+          chingutask_mobile_3,
+        ],
+      },
     },
+    isMultiPlatform: false,
   },
 ];

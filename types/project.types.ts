@@ -3,7 +3,10 @@ import { IconType } from "react-icons";
 
 export interface Project {
   title: string;
-  link: ProjectLink[];
+  link: {
+    repo: ProjectLink[];
+    website?: string;
+  };
   slug: string;
   technologies: string[];
   description: {
@@ -14,9 +17,13 @@ export interface Project {
   year: string;
   isSolo: boolean;
   images: {
-    website: StaticImageData[];
-    mobile: StaticImageData[];
+    website: {
+      largeScreen: StaticImageData[];
+      mobileScreen: StaticImageData[];
+    };
+    application?: StaticImageData[];
   };
+  isMultiPlatform: boolean;
 }
 
 interface ProjectLink {

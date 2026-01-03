@@ -27,11 +27,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.scrollbar-hidden {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* custom styles for the swiper */
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 1;
 }
-
-.scrollbar-hidden::-webkit-scrollbar {
-  display: none;
+.swiper-pagination-bullet-active {
+  background: #ffffff;
 }

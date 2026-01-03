@@ -36,7 +36,7 @@ export default function ProjectPage() {
 
           {/* project links */}
           <div className="flex gap-2">
-            {project.link.map((link) => (
+            {project.link.repo.map((link) => (
               <a
                 key={link.name}
                 href={link.url}
@@ -50,7 +50,11 @@ export default function ProjectPage() {
           </div>
 
           {/* images */}
-          <ImageCarousel images={project.images} />
+          <ImageCarousel
+            images={project.images}
+            website={project.link.website}
+            isMultiPlatform={false}
+          />
 
           {/* technologies */}
           <ul className="flex gap-2">
