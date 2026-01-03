@@ -53,7 +53,7 @@ export default function ProjectPage() {
           <ImageCarousel
             images={project.images}
             website={project.link.website}
-            isMultiPlatform={false}
+            isMultiPlatform={project.isMultiPlatform}
           />
 
           {/* technologies */}

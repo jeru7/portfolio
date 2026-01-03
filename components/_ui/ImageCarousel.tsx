@@ -1,10 +1,11 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import { MdWeb } from "react-icons/md";
 import { CiMobile1 } from "react-icons/ci";
@@ -32,12 +33,17 @@ const ImageCarousel = ({
   const [isMobile, setIsMobile] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef<SwiperType | null>(null);
 
   const currentImages = isWebsite
     ? isMobile
       ? images.website.mobileScreen
       : images.website.largeScreen
     : images.application; // application images
+
+  const handleResetSwiper = () => {
+    swiperRef.current?.slideTo(0, 700);
+  };
 
   // disable scroll on full screen
   useEffect(() => {
@@ -47,6 +53,7 @@ const ImageCarousel = ({
   return (
     <div className="relative w-full overflow-hidden rounded-xl bg-background">
       <Swiper
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
         pagination={{ clickable: true }}
         modules={[Pagination]}
         onSlideChange={(s) => setActiveIndex(s.activeIndex)}
@@ -78,7 +85,7 @@ const ImageCarousel = ({
           href={website}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-3 left-3 z-10 inline-flex items-center gap-1 rounded-md bg-black/60 px-3 py-1.5 text-xs text-white backdrop-blur transition hover:bg-black/75"
+          className="absolute bottom-3 left-3 z-10 inline-flex items-center gap-1 rounded-md bg-black/60 px-3 py-1.5 text-xs text-white backdrop-blur transition hover:bg-white/5"
         >
           <TbExternalLink className="h-4 w-4" />
           Visit site
@@ -88,7 +95,10 @@ const ImageCarousel = ({
       {/* view control buttons */}
       <ViewControlButton
         isWebsite={isWebsite}
-        setIsWebsite={setIsWebsite}
+        setIsWebsite={(isWebsite) => {
+          setIsWebsite(isWebsite);
+          handleResetSwiper();
+        }}
         isMobile={isMobile}
         setIsMobile={setIsMobile}
         isMultiPlatform={isMultiPlatform}
@@ -104,6 +114,7 @@ const ImageCarousel = ({
             className="fixed inset-0 z-50 bg-background p-4 md:p-10"
           >
             <Swiper
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
               pagination={{ clickable: true }}
               modules={[Pagination]}
               initialSlide={activeIndex}
@@ -131,7 +142,10 @@ const ImageCarousel = ({
             {/* view control buttons */}
             <ViewControlButton
               isWebsite={isWebsite}
-              setIsWebsite={setIsWebsite}
+              setIsWebsite={(isWebsite) => {
+                setIsWebsite(isWebsite);
+                handleResetSwiper();
+              }}
               isMobile={isMobile}
               setIsMobile={setIsMobile}
               isMultiPlatform={isMultiPlatform}
@@ -143,7 +157,7 @@ const ImageCarousel = ({
                 href={website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute bottom-4 left-4 z-50 inline-flex items-center gap-1 rounded-md bg-black/60 px-3 py-1.5 text-xs text-white backdrop-blur transition hover:bg-black/75"
+                className="absolute bottom-4 left-4 z-50 inline-flex items-center gap-1 rounded-md bg-black/60 px-3 py-1.5 text-xs text-white backdrop-blur transition hover:bg-white/5"
               >
                 <TbExternalLink className="h-4 w-4" />
                 Visit site
@@ -175,7 +189,7 @@ const ViewControlButton = ({
         <motion.button
           onClick={() => setIsMobile(!isMobile)}
           whileTap={{ scale: 0.9 }}
-          className="flex h-10 w-10 items-center justify-center text-white transition hover:bg-white/10"
+          className="flex h-10 w-10 items-center justify-center text-white transition hover:bg-white/10 rounded-l-md"
           aria-label="Toggle device view"
         >
           {isMobile ? (
@@ -190,7 +204,7 @@ const ViewControlButton = ({
         <motion.button
           onClick={() => setIsWebsite(!isWebsite)}
           whileTap={{ scale: 0.9 }}
-          className="flex h-10 items-center px-3 text-sm text-white transition hover:bg-white/10"
+          className={`flex h-10 items-center px-3 text-sm text-white transition hover:bg-white/10 rounded-r-md ${isMultiPlatform && !isWebsite && "rounded-l-md"}`}
           aria-label="Toggle platform"
         >
           {isWebsite ? "Website" : "Application"}
