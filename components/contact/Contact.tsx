@@ -197,7 +197,7 @@ const Contact = () => {
           href="/UNGAB_RESUME.pdf"
           rel="noopener noreferrer"
           target="_blank"
-          className="group text-sm border border-foreground rounded-md hover:cursor-pointer hover:border-accent transition-colors duration-200 px-3 py-1"
+          className="group text-sm border border-foreground rounded-md hover:cursor-pointer hover:border-accent transition-colors duration-200 px-3 py-1 text-nowrap"
         >
           View CV
         </a>
