@@ -2,12 +2,32 @@ import { Project } from "@/types/project.types";
 import { FaGithub } from "react-icons/fa";
 
 // chingutask imports
-import chingutask_web_1 from "@/public/images/projects/chingutask/chingutask-web_1.png";
-import chingutask_web_2 from "@/public/images/projects/chingutask/chingutask-web_2.png";
-import chingutask_web_3 from "@/public/images/projects/chingutask/chingutask-web_3.png";
-import chingutask_mobile_1 from "@/public/images/projects/chingutask/chingutask-mobile_1.png";
-import chingutask_mobile_2 from "@/public/images/projects/chingutask/chingutask-mobile_2.png";
-import chingutask_mobile_3 from "@/public/images/projects/chingutask/chingutask-mobile_3.png";
+import chingutask_web_large_1 from "@/public/images/projects/chingutask/chingutask-web-large_1.png";
+import chingutask_web_large_2 from "@/public/images/projects/chingutask/chingutask-web-large_2.png";
+import chingutask_web_large_3 from "@/public/images/projects/chingutask/chingutask-web-large_3.png";
+import chingutask_web_small_1 from "@/public/images/projects/chingutask/chingutask-web-small_1.png";
+import chingutask_web_small_2 from "@/public/images/projects/chingutask/chingutask-web-small_2.png";
+import chingutask_web_small_3 from "@/public/images/projects/chingutask/chingutask-web-small_3.png";
+
+// mathpath imports
+import mathpath_web_large_1 from "@/public/images/projects/mathpath/mathpath_web-large_1.png";
+import mathpath_web_large_2 from "@/public/images/projects/mathpath/mathpath_web-large_2.png";
+import mathpath_web_large_3 from "@/public/images/projects/mathpath/mathpath_web-large_3.png";
+import mathpath_web_large_4 from "@/public/images/projects/mathpath/mathpath_web-large_4.png";
+import mathpath_web_large_5 from "@/public/images/projects/mathpath/mathpath_web-large_5.png";
+import mathpath_web_large_6 from "@/public/images/projects/mathpath/mathpath_web-large_6.png";
+import mathpath_web_large_7 from "@/public/images/projects/mathpath/mathpath_web-large_7.png";
+import mathpath_web_small_1 from "@/public/images/projects/mathpath/mathpath_web-small_1.png";
+import mathpath_web_small_2 from "@/public/images/projects/mathpath/mathpath_web-small_2.png";
+import mathpath_web_small_3 from "@/public/images/projects/mathpath/mathpath_web-small_3.png";
+import mathpath_web_small_4 from "@/public/images/projects/mathpath/mathpath_web-small_4.png";
+import mathpath_web_small_5 from "@/public/images/projects/mathpath/mathpath_web-small_5.png";
+import mathpath_web_small_6 from "@/public/images/projects/mathpath/mathpath_web-small_6.png";
+import mathpath_web_small_7 from "@/public/images/projects/mathpath/mathpath_web-small_7.png";
+import mathpath_game_1 from "@/public/images/projects/mathpath/mathpath_game_1.png";
+import mathpath_game_2 from "@/public/images/projects/mathpath/mathpath_game_2.png";
+import mathpath_game_3 from "@/public/images/projects/mathpath/mathpath_game_3.png";
+import mathpath_game_4 from "@/public/images/projects/mathpath/mathpath_game_4.png";
 
 export const projects: Project[] = [
   // mathpath
@@ -50,13 +70,31 @@ export const projects: Project[] = [
     isSolo: false,
     images: {
       website: {
-        largeScreen: [chingutask_web_1, chingutask_web_2, chingutask_web_3],
+        largeScreen: [
+          mathpath_web_large_1,
+          mathpath_web_large_2,
+          mathpath_web_large_3,
+          mathpath_web_large_4,
+          mathpath_web_large_5,
+          mathpath_web_large_6,
+          mathpath_web_large_7,
+        ],
         mobileScreen: [
-          chingutask_mobile_1,
-          chingutask_mobile_2,
-          chingutask_mobile_3,
+          mathpath_web_small_1,
+          mathpath_web_small_2,
+          mathpath_web_small_3,
+          mathpath_web_small_4,
+          mathpath_web_small_5,
+          mathpath_web_small_6,
+          mathpath_web_small_7,
         ],
       },
+      application: [
+        mathpath_game_1,
+        mathpath_game_2,
+        mathpath_game_3,
+        mathpath_game_4,
+      ],
     },
     isMultiPlatform: true,
   },
@@ -89,11 +127,15 @@ export const projects: Project[] = [
     isSolo: false,
     images: {
       website: {
-        largeScreen: [chingutask_web_1, chingutask_web_2, chingutask_web_3],
+        largeScreen: [
+          chingutask_web_large_1,
+          chingutask_web_large_2,
+          chingutask_web_large_3,
+        ],
         mobileScreen: [
-          chingutask_mobile_1,
-          chingutask_mobile_2,
-          chingutask_mobile_3,
+          chingutask_web_small_1,
+          chingutask_web_small_2,
+          chingutask_web_small_3,
         ],
       },
     },

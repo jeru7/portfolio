@@ -85,7 +85,7 @@ const ImageCarousel = ({
           href={website}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-3 left-3 z-10 inline-flex items-center gap-1 rounded-md bg-black/60 px-3 py-1.5 text-xs text-white backdrop-blur transition hover:bg-white/5"
+          className="absolute bottom-3 left-3 z-10 inline-flex items-center gap-1 rounded-md bg-black/80 px-3 py-1.5 text-xs text-white backdrop-blur transition hover:bg-black"
         >
           <TbExternalLink className="h-4 w-4" />
           Visit site
@@ -157,7 +157,7 @@ const ImageCarousel = ({
                 href={website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute bottom-4 left-4 z-50 inline-flex items-center gap-1 rounded-md bg-black/60 px-3 py-1.5 text-xs text-white backdrop-blur transition hover:bg-white/5"
+                className="absolute bottom-4 left-4 z-50 inline-flex items-center gap-1 rounded-md bg-black/80 px-3 py-1.5 text-xs text-white backdrop-blur transition hover:bg-black"
               >
                 <TbExternalLink className="h-4 w-4" />
                 Visit site
@@ -189,7 +189,7 @@ const ViewControlButton = ({
         <motion.button
           onClick={() => setIsMobile(!isMobile)}
           whileTap={{ scale: 0.9 }}
-          className="flex h-10 w-10 items-center justify-center text-white transition hover:bg-white/10 rounded-l-md"
+          className={`flex h-10 w-10 items-center justify-center text-white transition hover:bg-white/10 rounded-l-md ${!isMultiPlatform && "rounded-r-md"}`}
           aria-label="Toggle device view"
         >
           {isMobile ? (
