@@ -193,10 +193,14 @@ const Contact = () => {
           ))}
         </div>
         {/* cv button */}
-        <Button
-          content="Download CV"
-          onClick={() => console.log("Download CV")}
-        />
+        <a
+          href="/UNGAB_RESUME.pdf"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="group text-sm border border-foreground rounded-md hover:cursor-pointer hover:border-accent transition-colors duration-200 px-3 py-1"
+        >
+          View CV
+        </a>
       </motion.section>
     </section>
   );

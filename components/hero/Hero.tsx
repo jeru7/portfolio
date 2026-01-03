@@ -3,8 +3,15 @@
 import { motion } from "motion/react";
 import { socMeds } from "@/lib/socials";
 import Button from "../_ui/Button";
+import { useSwiperContext } from "@/context/swiper/SwiperContext";
 
 const Hero = () => {
+  const { swiper } = useSwiperContext();
+
+  const handleViewProjects = () => {
+    swiper?.slideTo(2, 700); // 2: index of the #project section
+  };
+
   return (
     <section className="h-full flex flex-col justify-center gap-2 p-2 relative">
       <h1 className="">
@@ -41,17 +48,16 @@ const Hero = () => {
       </div>
       <div className="flex gap-2 items-center justify-center absolute bottom-32 left-1/2 -translate-x-1/2">
         {/* download cv button */}
-        {/* TODO: download cv */}
-        <Button
-          content="Download CV"
-          onClick={() => console.log("Download cv")}
-        />
+        <a
+          href="/UNGAB_RESUME.pdf"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="group text-sm border border-foreground rounded-md hover:cursor-pointer hover:border-accent transition-colors duration-200 px-3 py-1"
+        >
+          View CV
+        </a>
         {/* view projects button */}
-        {/* TODO: view projects */}
-        <Button
-          content="View Projects"
-          onClick={() => console.log("View Projects")}
-        />
+        <Button content="View Projects" onClick={handleViewProjects} />
       </div>
     </section>
   );
