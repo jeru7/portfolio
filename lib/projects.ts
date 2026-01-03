@@ -51,7 +51,7 @@ export const projects: Project[] = [
           url: "https://github.com/jeru7/MathPath-Server",
         },
       ],
-      website: "https://mathpath.site",
+      website: "https://www.mathpath.site/#hero",
     },
     slug: "mathpath-10",
     technologies: ["ReactJS", "TypeScript", "NodeJS", "MongoDB", "Unity", "C#"],
