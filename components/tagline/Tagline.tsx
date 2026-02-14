@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 const Tagline = () => {
   return (
-    <article className="h-full p-2 flex items-center">
+    <section className="h-full p-2 flex items-center md:w-200 mx-auto">
       <p>
         <motion.span
           initial={{ opacity: 0, y: 10 }}
@@ -27,7 +27,7 @@ const Tagline = () => {
         <br />
         That's how I build.
       </p>
-    </article>
+    </section>
   );
 };
 

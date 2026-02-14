@@ -13,11 +13,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="h-full flex flex-col justify-center gap-2 p-2 relative">
+    <section className="h-full flex flex-col justify-center gap-2 p-2 relative md:w-200 mx-auto">
       <h1 className="">
         Hi, I’m Emmanuel.
-        <br />
-        An aspiring{" "}
+        <br />A{" "}
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}

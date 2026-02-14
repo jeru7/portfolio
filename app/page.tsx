@@ -48,7 +48,7 @@ const HomePage = () => {
           window.history.replaceState(null, "", `/#${section}`);
         }
       }}
-      className="h-screen w-full min-w-80 overflow-hidden font-bold text-3xl md:w-200"
+      className="h-screen w-full min-w-80 overflow-hidden font-bold text-3xl"
     >
       <SwiperSlide>
         <Hero />

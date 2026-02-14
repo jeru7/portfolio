@@ -105,7 +105,7 @@ const Contact = () => {
   }, [isSuccess]);
 
   return (
-    <section className="h-full w-full p-4 md:p-8 flex">
+    <section className="h-full w-full p-4 md:p-8 flex md:w-200 mx-auto">
       <div className="flex flex-col md:flex-row gap-8 md:gap-16 w-full max-w-5xl mx-auto my-auto">
         {/* contact info */}
         <motion.div
@@ -119,7 +119,7 @@ const Contact = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-2">
               Get in touch
             </h2>
-            <p className="text-muted-foreground text-sm md:text-base">
+            <p className="text-muted-foreground font-normal text-sm md:text-base">
               Have a project in mind? Feel free to send me a message.
             </p>
           </div>

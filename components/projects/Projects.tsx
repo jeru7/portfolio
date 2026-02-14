@@ -13,7 +13,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="h-full w-full p-2 flex flex-col gap-4 justify-center">
+    <section className="h-full w-full p-2 flex flex-col gap-4 justify-center md:w-200 mx-auto">
       <h2 className="text-accent">Projects</h2>
       <ul className="flex flex-col gap-2">
         {projects.map((project) => (
