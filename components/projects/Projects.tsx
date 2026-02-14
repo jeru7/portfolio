@@ -10,6 +10,8 @@ const Projects = () => {
 
   const openProject = (slug: string) => {
     router.push(`/projects/${slug}`);
+    localStorage.setItem("atHome", "false");
+    localStorage.setItem("showSlash", "false");
   };
 
   return (

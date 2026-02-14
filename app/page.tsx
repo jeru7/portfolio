@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
 import "swiper/css";
@@ -8,9 +9,9 @@ import Hero from "@/components/hero/Hero";
 import Contact from "@/components/contact/Contact";
 import Projects from "@/components/projects/Projects";
 import Tagline from "@/components/tagline/Tagline";
+import SplashScreen from "@/components/splash/SplashScreen";
 import { SECTIONS } from "@/constants/sections";
 import { useSwiperContext } from "@/context/swiper/SwiperContext";
-import { useEffect } from "react";
 
 const getHash = () => {
   if (typeof window === "undefined") return "home";
@@ -26,7 +27,6 @@ const HomePage = () => {
 
     const index = SECTIONS.indexOf(hash);
 
-    // .5 secs delay before sliding to the right page
     const timer = setTimeout(() => {
       swiper?.slideTo(index, 700);
     }, 500);
@@ -66,4 +66,32 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default function Home() {
+  const [showSplash, setShowSplash] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const validHashes = ["home", "tagline", "projects", "contact"];
+    const currentHash = getHash();
+
+    if (validHashes.includes(currentHash)) {
+      setShowSplash(true);
+      sessionStorage.setItem("splashShown", "true");
+    }
+
+    setMounted(true);
+  }, []);
+
+  const handleSplashComplete = () => {
+    setShowSplash(false);
+  };
+
+  if (!mounted) return null;
+
+  return (
+    <>
+      {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
+      {!showSplash && <HomePage />}
+    </>
+  );
+}
