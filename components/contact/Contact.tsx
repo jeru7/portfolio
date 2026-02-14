@@ -105,103 +105,126 @@ const Contact = () => {
   }, [isSuccess]);
 
   return (
-    <section className="h-full w-full p-2 flex flex-col pb-8">
-      {/* message form */}
-      <section className="flex-1 flex items-center w-full">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
-          {/* title */}
-          <p className="text-accent">Feel free to message me</p>
-          <section className="flex flex-col gap-2">
-            {/* name */}
-            <input
-              name="name"
-              type="text"
-              placeholder="Name"
-              value={formData.name.value}
-              onChange={handleChange}
-              className="text-sm border rounded-md p-2 focus:outline-none focus:ring-0"
-            />
-            {formData.name.error && (
-              <p className="text-red-500 text-sm font-normal">
-                {formData.name.error}
-              </p>
-            )}
-            {/* email */}
-            <input
-              name="email"
-              type="email"
-              placeholder="Email"
-              value={formData.email.value}
-              onChange={handleChange}
-              className="text-sm border rounded-md p-2 focus:outline-none focus:ring-0"
-            />
-            {formData.email.error && (
-              <p className="text-red-500 text-sm font-normal">
-                {formData.email.error}
-              </p>
-            )}
-            {/* message */}
-            <textarea
-              name="message"
-              placeholder="Message"
-              value={formData.message.value}
-              onChange={handleChange}
-              className="w-full text-sm border rounded-md p-2 focus:outline-none focus:ring-0 resize-none h-48 md:h-96"
-            />
-            {formData.message.error && (
-              <p className="text-red-500 text-sm font-normal">
-                {formData.message.error}
-              </p>
-            )}
-
-            {/* send message button */}
-            <Button
-              content={isLoading ? "Sending message" : "Send message"}
-              disabled={isLoading || isSuccess}
-              type="submit"
-              customClasses="w-fit h-fit self-end"
-            />
-          </section>
-        </form>
-      </section>
-
-      {/* social media and cv */}
-      <motion.section
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
-        className="flex flex-col gap-2 items-center"
-      >
-        {/* social media buttons */}
-        <div className="flex gap-2">
-          {socMeds.map((social, index) => (
-            <div
-              className="flex items-center justify-center"
-              key={index}
-              title={social.title}
-            >
-              <a
-                href={social.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cursor-pointer hover:text-accent transition-colors duration-200"
-              >
-                {<social.icon className="w-6 h-6" />}
-              </a>
-            </div>
-          ))}
-        </div>
-        {/* cv button */}
-        <a
-          href="/UNGAB_RESUME.pdf"
-          rel="noopener noreferrer"
-          target="_blank"
-          className="group text-sm border border-foreground rounded-md hover:cursor-pointer hover:border-accent transition-colors duration-200 px-3 py-1 text-nowrap"
+    <section className="h-full w-full p-4 md:p-8 flex">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-16 w-full max-w-5xl mx-auto my-auto">
+        {/* contact info */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex flex-col gap-6 md:justify-center md:w-1/3"
         >
-          View CV
-        </a>
-      </motion.section>
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">
+              Get in touch
+            </h2>
+            <p className="text-muted-foreground text-sm md:text-base">
+              Have a project in mind? Feel free to send me a message.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <p className="text-accent text-sm font-medium">Connect with me</p>
+            <div className="flex gap-3">
+              {socMeds.map((social, index) => (
+                <a
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={index}
+                  title={social.title}
+                  className="p-2 border border-border rounded-md hover:border-accent hover:text-accent transition-all duration-200"
+                >
+                  {<social.icon className="w-5 h-5" />}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <a
+            href="/UNGAB_RESUME.pdf"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="inline-flex items-center gap-2 text-sm border border-foreground rounded-md hover:border-accent transition-colors duration-200 px-4 py-2 w-fit"
+          >
+            View CV
+          </a>
+        </motion.div>
+
+        {/* message form */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex-1 md:w-2/3 w-full"
+        >
+          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="name" className="text-sm font-medium">
+                  Name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Enter your name..."
+                  value={formData.name.value}
+                  onChange={handleChange}
+                  className="text-sm border border-border rounded-lg p-3 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
+                />
+                {formData.name.error && (
+                  <p className="text-red-500 text-xs">{formData.name.error}</p>
+                )}
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="email" className="text-sm font-medium">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Enter your email..."
+                  value={formData.email.value}
+                  onChange={handleChange}
+                  className="text-sm border border-border rounded-lg p-3 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
+                />
+                {formData.email.error && (
+                  <p className="text-red-500 text-xs">{formData.email.error}</p>
+                )}
+              </div>
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="message" className="text-sm font-medium">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell me about your project..."
+                value={formData.message.value}
+                onChange={handleChange}
+                className="w-full text-sm border border-border rounded-lg p-3 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none h-40 md:h-48"
+              />
+              {formData.message.error && (
+                <p className="text-red-500 text-xs">{formData.message.error}</p>
+              )}
+            </div>
+
+            <div className="flex justify-end">
+              <Button
+                content={isLoading ? "Sending..." : "Send Message"}
+                disabled={isLoading || isSuccess}
+                type="submit"
+                customClasses="px-6 py-2.5"
+              />
+            </div>
+          </form>
+        </motion.div>
+      </div>
     </section>
   );
 };

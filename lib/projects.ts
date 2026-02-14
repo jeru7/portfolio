@@ -98,47 +98,4 @@ export const projects: Project[] = [
     },
     isMultiPlatform: true,
   },
-  // chingutask
-  {
-    title: "ChinguTASK",
-    link: {
-      repo: [
-        {
-          icon: FaGithub,
-          name: "Website",
-          url: "https://github.com/chingu-voyages/v47-tier1-team-01",
-        },
-      ],
-      website: "https://v47-tier01-team01-daily-task-app.netlify.app/",
-    },
-    slug: "chingutask",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    description: {
-      short:
-        "A simple task management website created by collaborating with other developers from chingu.",
-      long: "ChinguTASK is a simple task management application developed as part of a 6-week sprint in the Chingu community. Built using JavaScript, HTML, and CSS, the app allows users to create tasks and view them on a calendar for easy organization and tracking. The project followed agile development practices with Trello for sprint planning and task management.",
-    },
-    features: [
-      "Users can create, edit, and delete tasks.",
-      "Tasks are displayed on a calendar for a clear overview of schedules.",
-      "Simple, responsive, and clean interface built with JavaScript, HTML, and CSS.",
-    ],
-    year: "2024",
-    isSolo: false,
-    images: {
-      website: {
-        largeScreen: [
-          chingutask_web_large_1,
-          chingutask_web_large_2,
-          chingutask_web_large_3,
-        ],
-        mobileScreen: [
-          chingutask_web_small_1,
-          chingutask_web_small_2,
-          chingutask_web_small_3,
-        ],
-      },
-    },
-    isMultiPlatform: false,
-  },
 ];
